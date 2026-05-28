@@ -1,0 +1,61 @@
+backend:
+  name: git-gateway
+  branch: main
+
+local_backend: true
+
+media_folder: "public/images"
+public_folder: "/images"
+
+collections:
+  - name: "about"
+    label: "Про мене"
+    folder: "src/content/about"
+    create: false
+    fields:
+      - { label: "Ім'я", name: "name", widget: "string" }
+      - { label: "Посада", name: "title", widget: "string" }
+      - { label: "Кредо", name: "credo", widget: "text" }
+      - { label: "Освіта", name: "education", widget: "text" }
+      - { label: "Досвід", name: "experience", widget: "text" }
+      - { label: "Рівень мови", name: "language_level", widget: "string" }
+      - { label: "Фото", name: "photo", widget: "image", required: false }
+
+  - name: "results"
+    label: "Результати"
+    folder: "src/content/results"
+    create: true
+    fields:
+      - { label: "Заголовок", name: "title", widget: "string" }
+      - { label: "Опис", name: "description", widget: "text" }
+      - { label: "Категорія", name: "category", widget: "select", options: ["Успішність", "Олімпіади", "Конкурси", "Проєкти"] }
+      - { label: "Рік", name: "year", widget: "number", value_type: "int" }
+
+  - name: "achievements"
+    label: "Досягнення"
+    folder: "src/content/achievements"
+    create: true
+    fields:
+      - { label: "Назва", name: "title", widget: "string" }
+      - { label: "Опис", name: "description", widget: "text" }
+      - { label: "Іконка", name: "icon", widget: "select", options: ["Award", "BookOpen", "BadgeCheck", "Globe", "GraduationCap", "Trophy", "Users"] }
+
+  - name: "methods"
+    label: "Методична робота"
+    folder: "src/content/methods"
+    create: true
+    fields:
+      - { label: "Тема", name: "title", widget: "string" }
+      - { label: "Опис", name: "description", widget: "text" }
+      - { label: "Посилання", name: "link", widget: "string", required: false }
+
+  - name: "contact"
+    label: "Контакти"
+    folder: "src/content/contact"
+    create: false
+    fields:
+      - { label: "Email", name: "email", widget: "string" }
+      - { label: "Телефон", name: "phone", widget: "string", required: false }
+      - { label: "Посилання", name: "links", widget: "list", fields:
+        - { label: "Платформа", name: "platform", widget: "string" }
+        - { label: "URL", name: "url", widget: "string" } }
