@@ -1,7 +1,7 @@
-import site from '../content/site.json';
+import footer from '../content/sections/footer.json';
 
 export default function Footer() {
-  const { logo, rights } = site.footer;
+  const { logo, rights } = footer;
 
   return (
     <footer className="bg-uk-navy text-uk-light py-12">

@@ -9,140 +9,142 @@ public_folder: /images
 
 collections:
   - name: site
-    label: Сайт (тексти)
+    label: Сайт (секції)
     delete: false
     editor:
       preview: false
     files:
-      - name: settings
-        label: Текстові налаштування
-        file: src/content/site.json
+      - name: navbar
+        label: Навігація
+        file: src/content/sections/navbar.json
         format: json
         fields:
-          - label: Навігація
-            name: navbar
-            widget: object
+          - label: Логотип
+            name: logo
+            widget: string
+          - label: Посилання
+            name: links
+            widget: list
             fields:
-              - label: Логотип
-                name: logo
+              - label: ID (якір)
+                name: id
                 widget: string
-              - label: Посилання
-                name: links
-                widget: list
-                fields:
-                  - label: ID (якір)
-                    name: id
-                    widget: string
-                  - label: Текст
-                    name: label
-                    widget: string
-              - label: Підпис меню
-                name: menuLabel
+              - label: Текст
+                name: label
                 widget: string
+          - label: Підпис меню
+            name: menuLabel
+            widget: string
 
-          - label: Головна (Hero)
-            name: hero
-            widget: object
-            fields:
-              - label: Бейдж
-                name: badge
-                widget: string
-              - label: Кнопка 1
-                name: primaryButton
-                widget: string
-              - label: Кнопка 2
-                name: secondaryButton
-                widget: string
+      - name: hero
+        label: Головна (Hero)
+        file: src/content/sections/hero.json
+        format: json
+        fields:
+          - label: Бейдж
+            name: badge
+            widget: string
+          - label: Кнопка 1
+            name: primaryButton
+            widget: string
+          - label: Кнопка 2
+            name: secondaryButton
+            widget: string
 
-          - label: Про мене
-            name: about
-            widget: object
+      - name: about
+        label: Про мене
+        file: src/content/sections/about.json
+        format: json
+        fields:
+          - label: Заголовок
+            name: title
+            widget: string
+          - label: Деталі
+            name: details
+            widget: list
             fields:
-              - label: Заголовок
-                name: title
+              - label: Підпис
+                name: label
                 widget: string
-              - label: Деталі
-                name: details
-                widget: list
-                fields:
-                  - label: Підпис
-                    name: label
-                    widget: string
-                  - label: Іконка
-                    name: icon
-                    widget: string
-                  - label: Поле профілю
-                    name: field
-                    widget: string
-              - label: Заголовок досягнень
-                name: achievementsTitle
+              - label: Іконка
+                name: icon
                 widget: string
+              - label: Поле профілю
+                name: field
+                widget: string
+          - label: Заголовок досягнень
+            name: achievementsTitle
+            widget: string
 
-          - label: Результати
-            name: results
-            widget: object
+      - name: results
+        label: Результати
+        file: src/content/sections/results.json
+        format: json
+        fields:
+          - label: Заголовок
+            name: title
+            widget: string
+          - label: Опис
+            name: description
+            widget: text
+          - label: Категорії
+            name: categories
+            widget: list
             fields:
-              - label: Заголовок
-                name: title
+              - label: Назва
+                name: name
                 widget: string
-              - label: Опис
-                name: description
-                widget: text
-              - label: Категорії
-                name: categories
-                widget: list
-                fields:
-                  - label: Назва
-                    name: name
-                    widget: string
-                  - label: Іконка
-                    name: icon
-                    widget: string
-                  - label: CSS колір
-                    name: color
-                    widget: string
-              - label: Запасний колір
-                name: fallbackCategory
+              - label: Іконка
+                name: icon
                 widget: string
+              - label: CSS колір
+                name: color
+                widget: string
+          - label: Запасний колір
+            name: fallbackCategory
+            widget: string
 
-          - label: Методична робота
-            name: methods
-            widget: object
-            fields:
-              - label: Заголовок
-                name: title
-                widget: string
-              - label: Читати далі
-                name: readMore
-                widget: string
+      - name: methods
+        label: Методична робота
+        file: src/content/sections/methods.json
+        format: json
+        fields:
+          - label: Заголовок
+            name: title
+            widget: string
+          - label: Читати далі
+            name: readMore
+            widget: string
 
-          - label: Контакти
-            name: contact
-            widget: object
-            fields:
-              - label: Заголовок
-                name: title
-                widget: string
-              - label: Email підпис
-                name: emailLabel
-                widget: string
-              - label: Телефон підпис
-                name: phoneLabel
-                widget: string
-              - label: Профіль підпис
-                name: profileLabel
-                widget: string
+      - name: contact
+        label: Контакти
+        file: src/content/sections/contact.json
+        format: json
+        fields:
+          - label: Заголовок
+            name: title
+            widget: string
+          - label: Email підпис
+            name: emailLabel
+            widget: string
+          - label: Телефон підпис
+            name: phoneLabel
+            widget: string
+          - label: Профіль підпис
+            name: profileLabel
+            widget: string
 
-          - label: Футер
-            name: footer
-            widget: object
-            fields:
-              - label: Логотип
-                name: logo
-                widget: string
-              - label: Права
-                name: rights
-                widget: string
+      - name: footer
+        label: Футер
+        file: src/content/sections/footer.json
+        format: json
+        fields:
+          - label: Логотип
+            name: logo
+            widget: string
+          - label: Права
+            name: rights
+            widget: string
 
   - name: profile
     label: Профіль

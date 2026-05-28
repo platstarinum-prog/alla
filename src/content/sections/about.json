@@ -1,0 +1,10 @@
+{
+  "title": "Про мене",
+  "details": [
+    { "label": "Освіта", "icon": "GraduationCap", "field": "education" },
+    { "label": "Стаж", "icon": "Briefcase", "field": "experience" },
+    { "label": "Рівень мови", "icon": "Globe", "field": "language_level" },
+    { "label": "Категорія", "icon": "Award", "field": "category" }
+  ],
+  "achievementsTitle": "Досягнення"
+}

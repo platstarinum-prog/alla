@@ -1,11 +1,11 @@
 import { motion } from 'framer-motion';
 import { Trophy } from 'lucide-react';
 import resultsData from '../content/results/results.json';
-import site from '../content/site.json';
+import siteResults from '../content/sections/results.json';
 import { iconMap } from '../content/iconMap';
 
 export default function Results() {
-  const { title, description, categories, fallbackCategory } = site.results;
+  const { title, description, categories, fallbackCategory } = siteResults;
 
   return (
     <section id="results" className="py-24">

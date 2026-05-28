@@ -2,7 +2,7 @@ import { motion } from 'framer-motion';
 import { Award } from 'lucide-react';
 import profile from '../content/about/profile.json';
 import achievements from '../content/achievements/achievements.json';
-import site from '../content/site.json';
+import about from '../content/sections/about.json';
 import { iconMap } from '../content/iconMap';
 
 const fieldMap: Record<string, string> = {
@@ -13,7 +13,7 @@ const fieldMap: Record<string, string> = {
 };
 
 export default function About() {
-  const { title, details, achievementsTitle } = site.about;
+  const { title, details, achievementsTitle } = about;
 
   return (
     <section id="about" className="py-24 bg-uk-light/50">
