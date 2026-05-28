@@ -1,22 +1,24 @@
-[
-  {
-    "title": "Сертифікат CAE (C1)",
-    "description": "Підтверджений рівень володіння англійською мовою C1 (Cambridge Assessment English).",
-    "icon": "BadgeCheck"
-  },
-  {
-    "title": "CLIL-методологія",
-    "description": "Розробка та впровадження інтегрованих уроків (English + Science, Art, Geography) з використанням CLIL.",
-    "icon": "BookOpen"
-  },
-  {
-    "title": "Онлайн-інструменти",
-    "description": "Використання Wordwall, Quizizz, Padlet, Canva, Google Classroom для інтерактивного навчання.",
-    "icon": "Globe"
-  },
-  {
-    "title": "Професійний розвиток",
-    "description": "Курси EdEra, Prometheus, British Council. Вебінари та майстер-класи з методики викладання.",
-    "icon": "GraduationCap"
-  }
-]
+{
+  "list": [
+    {
+      "title": "Сертифікат CAE (C1)",
+      "description": "Підтверджений рівень володіння англійською мовою C1 (Cambridge Assessment English).",
+      "icon": "BadgeCheck"
+    },
+    {
+      "title": "CLIL-методологія",
+      "description": "Розробка та впровадження інтегрованих уроків (English + Science, Art, Geography) з використанням CLIL.",
+      "icon": "BookOpen"
+    },
+    {
+      "title": "Онлайн-інструменти",
+      "description": "Використання Wordwall, Quizizz, Padlet, Canva, Google Classroom для інтерактивного навчання.",
+      "icon": "Globe"
+    },
+    {
+      "title": "Професійний розвиток",
+      "description": "Курси EdEra, Prometheus, British Council. Вебінари та майстер-класи з методики викладання.",
+      "icon": "GraduationCap"
+    }
+  ]
+}

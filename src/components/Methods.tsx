@@ -16,7 +16,7 @@ export default function Methods() {
           <div className="w-16 h-1 bg-uk-red rounded-full mb-12" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {methodsData.map((item, idx) => (
+            {methodsData.list.map((item, idx) => (
               <motion.div
                 key={item.title}
                 initial={{ opacity: 0, y: 20 }}

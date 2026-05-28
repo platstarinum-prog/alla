@@ -33,7 +33,7 @@ export default function Results() {
           </p>
 
           <div className="grid sm:grid-cols-2 gap-6">
-            {resultsData.map((item, idx) => {
+            {resultsData.list.map((item, idx) => {
               const IconComponent = categoryIcons[item.category] || Trophy;
               return (
                 <motion.div

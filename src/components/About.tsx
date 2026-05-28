@@ -47,7 +47,7 @@ export default function About() {
 
           <h3 className="text-2xl font-bold text-uk-navy mb-6">Досягнення</h3>
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6">
-            {achievements.map((item, idx) => {
+            {achievements.list.map((item, idx) => {
               const IconComponent = iconMap[item.icon as keyof typeof iconMap] || Award;
               return (
                 <motion.div
