@@ -59,32 +59,11 @@ collections:
               - { label: "Опис", name: "description", widget: "text" }
               - label: "Категорії"
                 name: "categories"
-                widget: "object"
+                widget: "list"
                 fields:
-                  - label: "Успішність"
-                    name: "Успішність"
-                    widget: "object"
-                    fields:
-                      - { label: "Іконка", name: "icon", widget: "string" }
-                      - { label: "CSS колір", name: "color", widget: "string" }
-                  - label: "Олімпіади"
-                    name: "Олімпіади"
-                    widget: "object"
-                    fields:
-                      - { label: "Іконка", name: "icon", widget: "string" }
-                      - { label: "CSS колір", name: "color", widget: "string" }
-                  - label: "Конкурси"
-                    name: "Конкурси"
-                    widget: "object"
-                    fields:
-                      - { label: "Іконка", name: "icon", widget: "string" }
-                      - { label: "CSS колір", name: "color", widget: "string" }
-                  - label: "Проєкти"
-                    name: "Проєкти"
-                    widget: "object"
-                    fields:
-                      - { label: "Іконка", name: "icon", widget: "string" }
-                      - { label: "CSS колір", name: "color", widget: "string" }
+                  - { label: "Назва", name: "name", widget: "string" }
+                  - { label: "Іконка", name: "icon", widget: "string" }
+                  - { label: "CSS колір", name: "color", widget: "string" }
               - { label: "Fallback колір", name: "fallbackCategory", widget: "string" }
           - label: "Методична робота"
             name: "methods"
@@ -125,7 +104,6 @@ collections:
           - { label: "Досвід", name: "experience", widget: "text" }
           - { label: "Рівень мови", name: "language_level", widget: "string" }
           - { label: "Категорія", name: "category", widget: "string" }
-          - { label: "Фото", name: "photo", widget: "image", required: false }
 
   - name: "contact"
     label: "Контакти (дані)"

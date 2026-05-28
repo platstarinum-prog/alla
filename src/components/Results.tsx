@@ -22,8 +22,8 @@ export default function Results() {
 
           <div className="grid sm:grid-cols-2 gap-6">
             {resultsData.list.map((item, idx) => {
-              const cat = categories[item.category as keyof typeof categories];
-              const IconComponent = iconMap[cat?.icon as string] || Trophy;
+              const cat = categories.find(c => c.name === item.category);
+              const IconComponent = iconMap[cat?.icon || ''] || Trophy;
               const colorClass = cat?.color || fallbackCategory;
               return (
                 <motion.div
