@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
-import { BookOpen, FileText, ExternalLink } from 'lucide-react';
+import { BookOpen, ExternalLink } from 'lucide-react';
 import methodsData from '../content/methods/methods.json';
+import site from '../content/site.json';
 
 export default function Methods() {
+  const { title, readMore } = site.methods;
+
   return (
     <section id="methods" className="py-24 bg-uk-light/50">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +15,7 @@ export default function Methods() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-uk-navy mb-4">Методична робота</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-uk-navy mb-4">{title}</h2>
           <div className="w-16 h-1 bg-uk-red rounded-full mb-12" />
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -37,9 +40,8 @@ export default function Methods() {
                     rel="noopener noreferrer"
                     className="inline-flex items-center gap-1 text-sm text-uk-red font-medium mt-4 hover:underline"
                   >
-                    <FileText size={14} />
-                    Читати статтю
-                    <ExternalLink size={12} />
+                    <ExternalLink size={14} />
+                    {readMore}
                   </a>
                 )}
               </motion.div>

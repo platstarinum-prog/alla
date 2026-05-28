@@ -1,22 +1,12 @@
 import { motion } from 'framer-motion';
-import { Trophy, Users, BookOpen, FlaskConical, type LucideIcon } from 'lucide-react';
+import { Trophy } from 'lucide-react';
 import resultsData from '../content/results/results.json';
-
-const categoryIcons: Record<string, LucideIcon> = {
-  'Успішність': Users,
-  'Олімпіади': Trophy,
-  'Конкурси': BookOpen,
-  'Проєкти': FlaskConical,
-};
-
-const categoryColors: Record<string, string> = {
-  'Успішність': 'bg-blue-50 text-blue-700',
-  'Олімпіади': 'bg-amber-50 text-amber-700',
-  'Конкурси': 'bg-emerald-50 text-emerald-700',
-  'Проєкти': 'bg-purple-50 text-purple-700',
-};
+import site from '../content/site.json';
+import { iconMap } from '../content/iconMap';
 
 export default function Results() {
+  const { title, description, categories, fallbackCategory } = site.results;
+
   return (
     <section id="results" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -26,15 +16,15 @@ export default function Results() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-uk-navy mb-4">Результати</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-uk-navy mb-4">{title}</h2>
           <div className="w-16 h-1 bg-uk-red rounded-full mb-4" />
-          <p className="text-uk-steel text-lg mb-12 max-w-2xl">
-            Досягнення моїх учнів — найкраще підтвердження ефективності навчання.
-          </p>
+          <p className="text-uk-steel text-lg mb-12 max-w-2xl">{description}</p>
 
           <div className="grid sm:grid-cols-2 gap-6">
             {resultsData.list.map((item, idx) => {
-              const IconComponent = categoryIcons[item.category] || Trophy;
+              const cat = categories[item.category as keyof typeof categories];
+              const IconComponent = iconMap[cat?.icon as string] || Trophy;
+              const colorClass = cat?.color || fallbackCategory;
               return (
                 <motion.div
                   key={item.title}
@@ -51,7 +41,7 @@ export default function Results() {
                     <div className="flex-1 min-w-0">
                       <div className="flex items-center gap-3 mb-2">
                         <h3 className="font-semibold text-uk-navy">{item.title}</h3>
-                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${categoryColors[item.category] || 'bg-gray-50 text-gray-600'}`}>
+                        <span className={`text-xs font-medium px-2 py-0.5 rounded-full ${colorClass}`}>
                           {item.category}
                         </span>
                       </div>

@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { Mail, Phone, ExternalLink } from 'lucide-react';
 import contact from '../content/contact/contact.json';
+import site from '../content/site.json';
 
 export default function Contact() {
+  const { title, emailLabel, phoneLabel, profileLabel } = site.contact;
+
   return (
     <section id="contact" className="py-24">
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -12,7 +15,7 @@ export default function Contact() {
           viewport={{ once: true, margin: '-80px' }}
           transition={{ duration: 0.6 }}
         >
-          <h2 className="text-3xl sm:text-4xl font-bold text-uk-navy mb-4">Контакти</h2>
+          <h2 className="text-3xl sm:text-4xl font-bold text-uk-navy mb-4">{title}</h2>
           <div className="w-16 h-1 bg-uk-red rounded-full mb-12" />
 
           <div className="max-w-xl mx-auto space-y-6">
@@ -28,7 +31,7 @@ export default function Contact() {
                 <Mail size={22} className="text-uk-red" />
               </div>
               <div>
-                <p className="text-xs text-uk-steel/60 uppercase tracking-wider font-medium">Email</p>
+                <p className="text-xs text-uk-steel/60 uppercase tracking-wider font-medium">{emailLabel}</p>
                 <p className="text-uk-navy font-medium">{contact.email}</p>
               </div>
             </motion.a>
@@ -46,7 +49,7 @@ export default function Contact() {
                   <Phone size={22} className="text-uk-red" />
                 </div>
                 <div>
-                  <p className="text-xs text-uk-steel/60 uppercase tracking-wider font-medium">Телефон</p>
+                  <p className="text-xs text-uk-steel/60 uppercase tracking-wider font-medium">{phoneLabel}</p>
                   <p className="text-uk-navy font-medium">{contact.phone}</p>
                 </div>
               </motion.a>
@@ -68,7 +71,7 @@ export default function Contact() {
                   <ExternalLink size={22} className="text-uk-red" />
                 </div>
                 <div className="flex-1">
-                  <p className="text-xs text-uk-steel/60 uppercase tracking-wider font-medium">Профіль</p>
+                  <p className="text-xs text-uk-steel/60 uppercase tracking-wider font-medium">{profileLabel}</p>
                   <p className="text-uk-navy font-medium">{link.platform}</p>
                 </div>
                 <ExternalLink size={16} className="text-uk-steel/40 group-hover:text-uk-red transition-colors" />

@@ -1,8 +1,11 @@
 import { motion } from 'framer-motion';
 import { ArrowDown } from 'lucide-react';
 import profile from '../content/about/profile.json';
+import site from '../content/site.json';
 
 export default function Hero() {
+  const { badge, primaryButton, secondaryButton } = site.hero;
+
   return (
     <section id="hero" className="min-h-screen flex items-center justify-center relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-br from-uk-navy/5 via-white to-uk-red/5 pointer-events-none" />
@@ -14,7 +17,7 @@ export default function Hero() {
         >
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-uk-navy/5 text-uk-steel text-sm font-medium mb-8">
             <span className="w-2 h-2 rounded-full bg-uk-red animate-pulse" />
-            Teacher Portfolio
+            {badge}
           </div>
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-bold text-uk-navy leading-tight mb-6">
             {profile.name}
@@ -30,14 +33,14 @@ export default function Hero() {
               href="#about"
               className="inline-flex items-center gap-2 px-6 py-3 bg-uk-navy text-white rounded-lg hover:bg-uk-navy/90 transition-colors font-medium"
             >
-              Дізнатись більше
+              {primaryButton}
               <ArrowDown size={18} />
             </a>
             <a
               href="#contact"
               className="inline-flex items-center gap-2 px-6 py-3 border-2 border-uk-navy/20 text-uk-navy rounded-lg hover:border-uk-navy/40 transition-colors font-medium"
             >
-              Контакти
+              {secondaryButton}
             </a>
           </div>
         </motion.div>
